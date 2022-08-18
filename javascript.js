@@ -6,9 +6,18 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
+
+// Capitalize Player Selection
+let  capitalizeSelection = (string) => {
+    return string.charAt(0).toUpperCase() + playerSelection.toLowerCase().slice(1);
+}
+
+
+// Play one round
 function playRound(playerSelection, computerSelection) {
 
-    let result;
+    let result = "";
+    playerSelection = capitalizeSelection(playerSelection);
 
     if(playerSelection == "Rock") {
 
@@ -57,6 +66,10 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
+    else {
+        alert("Choose a valid option!! Rock, Paper or Scissors!");
+    }
+
     return result;
 
 }
@@ -83,27 +96,30 @@ function game() {
         else if(oneRoundResult.includes("You Lose")) {
             computerScore += 1;
         }
-        else {
+        else if(oneRoundResult.includes("It's a tie")) {
             playerScore += 0;
             computerScore += 0;
         }
+        else {}
     }
 
+
+    // Display the game result
     function gameResult() {
 
         if(playerScore > computerScore) {
-            result = "Congratulations! You Win!"
+            result = `Congratulations! You Win! ${playerScore} to ${computerScore}`
         }
         else if (playerScore < computerScore) {
-            result = "The Computer Won!"
+            result = `The Computer Won! ${computerScore} to ${playerScore}`
         }
         else {
-            result = "It's a tie!"
+            result = `It's a tie! ${playerScore} to ${computerScore}`
         }
 
-        return result;
+        return `Game Result: ${result}`;
     }
-    
+
     console.log(gameResult());
 
 }
