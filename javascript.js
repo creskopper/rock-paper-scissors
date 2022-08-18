@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
                 result = `You Win! ${playerSelection} beats ${computerSelection}`;
                 break;
 
-            default : result = "It's a tie!"
+            default : result = `It's a tie! ${playerSelection} vs ${computerSelection}`;
         }
     }
 
@@ -45,7 +45,7 @@ function playRound(playerSelection, computerSelection) {
                 result = `You Win! ${playerSelection} beats ${computerSelection}`;
                 break;
 
-            default : result = "It's a tie!"
+            default : result = `It's a tie! ${playerSelection} vs ${computerSelection}`;
         }
         
     }
@@ -61,7 +61,7 @@ function playRound(playerSelection, computerSelection) {
                 result = `You Win! ${playerSelection} beats ${computerSelection}`;
                 break;
 
-            default : result = "It's a tie!"
+            default : result = `It's a tie! ${playerSelection} vs ${computerSelection}`;
         }
         
     }
