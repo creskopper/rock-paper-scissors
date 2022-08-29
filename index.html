@@ -10,22 +10,36 @@
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="running-score">
-                <p id="player-score">Player Score: 0 Points</p>
-                <p id="computer-score">Computer Score: 0 Points</p>
-        </div>
-
-        <div id="results">
-            <p id="one-round-result"></p>
-        </div>
-    
-        <div class="player-selection">
-            <button class="btn" id="rock">Rock</button>
-            <button class="btn" id="paper">Paper</button>
-            <button class="btn" id="scissors">Scissors</button>
+    <div id="result-wrapper">
+        <div id="result-annouce">
+            <h1 id="heading-result">Congratulations! You Win!</h1>
+            <div class="scores">
+                <p id="final-player-score">Player Score: 5 Points</p>
+                <p id="final-computer-score">Computer Score: 3 Points</p>
+            </div>
         </div>
     </div>
+    
+
+    <div id="game-wrapper">
+        <div class="game-card">
+            <div class="running-score">
+                    <p id="player-score">Player Score: 0 Points</p>
+                    <p id="computer-score">Computer Score: 0 Points</p>
+            </div>
+    
+            <div id="results">
+                <p id="one-round-result">Choose your weapon!</p>
+            </div>
+        
+            <div class="player-selection">
+                <button class="btn" id="rock">Rock</button>
+                <button class="btn" id="paper">Paper</button>
+                <button class="btn" id="scissors">Scissors</button>
+            </div>
+        </div>
+    </div>
+    
 
 </body>
 </html>

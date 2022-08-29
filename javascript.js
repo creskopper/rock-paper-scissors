@@ -63,6 +63,12 @@ const scissorsBtn = document.getElementById("scissors");
 const paraPlayerScore = document.getElementById("player-score");
 const paraComputerScore = document.getElementById("computer-score");
 const paraResults = document.getElementById("one-round-result");
+const resultWrapper = document.getElementById("result-wrapper");
+const headingResult = document.getElementById("heading-result");
+const playerFinalScore = document.getElementById("final-player-score");
+const computerFinalScore = document.getElementById("final-computer-score");
+const gameWrapper = document.getElementById("game-wrapper");
+
 
 let playerScore = 0;
 let computerScore = 0;
@@ -87,12 +93,27 @@ function roundButton(choice) {
 
     function gameResult() {
         if(playerScore == 5) {
+            
+            headingResult.textContent = "Congratulations! You Win!";
+            playerFinalScore.textContent = `Player Score: ${playerScore} Points`;
+            computerFinalScore.textContent = `Player Score: ${computerScore} Points`;
+            gameWrapper.style.display = "none";
+            resultWrapper.style.display = "block";
+
             playerScore = 0;
             computerScore = 0;
+
             return console.log("Congratulations! You Win!");
         } else if(computerScore == 5) {
             playerScore = 0;
             computerScore = 0;
+
+            headingResult.textContent = "Computer Won!";
+            playerFinalScore.textContent = `Player Score: ${playerScore} Points`;
+            computerFinalScore.textContent = `Player Score: ${computerScore} Points`;
+            gameWrapper.style.display = "none";
+            resultWrapper.style.display = "block";
+
             return console.log("Computer Won!");
         } else return;
     }
