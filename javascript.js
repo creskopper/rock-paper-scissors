@@ -62,6 +62,7 @@ const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
 const paraPlayerScore = document.getElementById("player-score");
 const paraComputerScore = document.getElementById("computer-score");
+const paraResults = document.getElementById("one-round-result");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -70,14 +71,15 @@ let computerScore = 0;
 function roundButton(choice) {
     computerSelection = getComputerChoice();
     let oneRoundResult = playRound(choice, computerSelection);
-    console.log(oneRoundResult);
+    
+    paraResults.textContent = `${oneRoundResult}`;
 
     if(oneRoundResult.includes("You Win")) {
         playerScore += 1;
-        paraPlayerScore.textContent = `${playerScore} Points`;
+        paraPlayerScore.textContent = `Player Score: ${playerScore} Points`;
     } else if(oneRoundResult.includes("You Lose")) {
         computerScore += 1;
-        paraComputerScore.textContent = `${computerScore} Points`;
+        paraComputerScore.textContent = `Computer Score: ${computerScore} Points`;
     } else if(oneRoundResult.includes("It's a tie")) {
         playerScore += 0;
         computerScore += 0;
