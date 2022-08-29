@@ -105,14 +105,15 @@ function roundButton(choice) {
 
             return console.log("Congratulations! You Win!");
         } else if(computerScore == 5) {
-            playerScore = 0;
-            computerScore = 0;
 
             headingResult.textContent = "Computer Won!";
             playerFinalScore.textContent = `Player Score: ${playerScore} Points`;
             computerFinalScore.textContent = `Player Score: ${computerScore} Points`;
             gameWrapper.style.display = "none";
             resultWrapper.style.display = "block";
+
+            playerScore = 0;
+            computerScore = 0;
 
             return console.log("Computer Won!");
         } else return;
