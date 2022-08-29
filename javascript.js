@@ -7,17 +7,37 @@ function getComputerChoice() {
 }
 
 
-// Capitalize Player Selection
-let  capitalizeSelection = (string) => {
-    return string.charAt(0).toUpperCase() + playerSelection.toLowerCase().slice(1);
-}
+// 
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorsBtn = document.getElementById("scissors");
+
+rockBtn.addEventListener("click", () => {
+    playRound("Rock", getComputerChoice())
+});
+paperBtn.addEventListener("click", () => {
+    playRound("Paper", getComputerChoice())
+});
+scissorsBtn.addEventListener("click", () => {
+    playRound("Scissors", getComputerChoice())
+});
+
+
+
+
+
+
+
+
+
+
 
 
 // Play one round
 function playRound(playerSelection, computerSelection) {
 
     let result = "";
-    playerSelection = capitalizeSelection(playerSelection);
+    // playerSelection = capitalizeSelection(playerSelection);
 
     if(playerSelection == "Rock") {
 
@@ -66,11 +86,7 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
-    else {
-        alert("Choose a valid option!! Rock, Paper or Scissors!");
-    }
-
-    return result;
+    return console.log(result);;
 
 }
 
@@ -82,24 +98,20 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
+    computerSelection = getComputerChoice();
 
-        playerSelection = prompt("Choose! Rock, Paper, Scissors");
-        computerSelection = getComputerChoice();
-    
-        let oneRoundResult = playRound(playerSelection, computerSelection);
-        console.log(oneRoundResult);
-    
-        if(oneRoundResult.includes("You Win")) {
-            playerScore += 1;
-        }
-        else if(oneRoundResult.includes("You Lose")) {
-            computerScore += 1;
-        }
-        else if(oneRoundResult.includes("It's a tie")) {
-            playerScore += 0;
-            computerScore += 0;
-        }
+    let oneRoundResult = playRound(playerSelection, computerSelection);
+    console.log(oneRoundResult);
+
+    if(oneRoundResult.includes("You Win")) {
+        playerScore += 1;
+    }
+    else if(oneRoundResult.includes("You Lose")) {
+        computerScore += 1;
+    }
+    else if(oneRoundResult.includes("It's a tie")) {
+        playerScore += 0;
+        computerScore += 0;
     }
 
 
@@ -123,4 +135,3 @@ function game() {
 
 }
 
-game();
