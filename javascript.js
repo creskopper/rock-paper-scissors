@@ -6,38 +6,9 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
-
-// 
-const rockBtn = document.getElementById("rock");
-const paperBtn = document.getElementById("paper");
-const scissorsBtn = document.getElementById("scissors");
-
-rockBtn.addEventListener("click", () => {
-    playRound("Rock", getComputerChoice())
-});
-paperBtn.addEventListener("click", () => {
-    playRound("Paper", getComputerChoice())
-});
-scissorsBtn.addEventListener("click", () => {
-    playRound("Scissors", getComputerChoice())
-});
-
-
-
-
-
-
-
-
-
-
-
-
 // Play one round
 function playRound(playerSelection, computerSelection) {
-
     let result = "";
-    // playerSelection = capitalizeSelection(playerSelection);
 
     if(playerSelection == "Rock") {
 
@@ -52,9 +23,7 @@ function playRound(playerSelection, computerSelection) {
 
             default : result = `It's a tie! ${playerSelection} vs ${computerSelection}`;
         }
-    }
-
-    else if(playerSelection == "Paper") {
+    } else if(playerSelection == "Paper") {
 
         switch(computerSelection) {
             case "Scissors" :
@@ -68,9 +37,7 @@ function playRound(playerSelection, computerSelection) {
             default : result = `It's a tie! ${playerSelection} vs ${computerSelection}`;
         }
         
-    }
-
-    else if(playerSelection == "Scissors") {
+    } else if(playerSelection == "Scissors") {
 
         switch(computerSelection) {
             case "Rock" :
@@ -86,52 +53,102 @@ function playRound(playerSelection, computerSelection) {
         
     }
 
-    return console.log(result);;
-
+    return result;
 }
 
 
-// game()
-function game() {
+
+// 
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorsBtn = document.getElementById("scissors");
 
 
-    let playerScore = 0;
-    let computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
+
+
+// Play until one player reaches 5 points
+function roundButton(choice) {
     computerSelection = getComputerChoice();
-
-    let oneRoundResult = playRound(playerSelection, computerSelection);
+    let oneRoundResult = playRound(choice, computerSelection);
     console.log(oneRoundResult);
 
     if(oneRoundResult.includes("You Win")) {
         playerScore += 1;
-    }
-    else if(oneRoundResult.includes("You Lose")) {
+    } else if(oneRoundResult.includes("You Lose")) {
         computerScore += 1;
-    }
-    else if(oneRoundResult.includes("It's a tie")) {
+    } else if(oneRoundResult.includes("It's a tie")) {
         playerScore += 0;
         computerScore += 0;
     }
 
-
-    // Display the game result
     function gameResult() {
-
-        if(playerScore > computerScore) {
-            result = `Congratulations! You Win! ${playerScore} to ${computerScore}`
-        }
-        else if (playerScore < computerScore) {
-            result = `The Computer Won! ${computerScore} to ${playerScore}`
-        }
-        else {
-            result = `It's a tie! ${playerScore} to ${computerScore}`
-        }
-
-        return `Game Result: ${result}`;
+        if(playerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
+            return console.log("Congratulations! You Win!");
+        } else if(computerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
+            return console.log("Computer Won!");
+        } else return;
     }
-
-    console.log(gameResult());
-
+    gameResult();
 }
+
+
+
+rockBtn.addEventListener("click", () => {
+    roundButton("Rock");
+});
+
+paperBtn.addEventListener("click", () => {
+    roundButton("Paper");
+});
+
+scissorsBtn.addEventListener("click", () => {
+    roundButton("Scissors");
+});
+
+
+
+
+
+
+
+
+//  // Display the game result
+
+
+// game()
+// function game() {
+
+
+//     let playerScore = 0;
+//     let computerScore = 0;
+
+//     computerSelection = getComputerChoice();
+
+//     let oneRoundResult = playRound(playerSelection, computerSelection);
+//     console.log(oneRoundResult);
+
+//     if(oneRoundResult.includes("You Win")) {
+//         playerScore += 1;
+//     }
+//     else if(oneRoundResult.includes("You Lose")) {
+//         computerScore += 1;
+//     }
+//     else if(oneRoundResult.includes("It's a tie")) {
+//         playerScore += 0;
+//         computerScore += 0;
+//     }
+
+
+   
+
+//     console.log(gameResult());
+
+// }
 
