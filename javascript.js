@@ -56,18 +56,15 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
-
-
-// 
+// DOM Variables
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
-
+const paraPlayerScore = document.getElementById("player-score");
+const paraComputerScore = document.getElementById("computer-score");
 
 let playerScore = 0;
 let computerScore = 0;
-
-
 
 // Play until one player reaches 5 points
 function roundButton(choice) {
@@ -77,8 +74,10 @@ function roundButton(choice) {
 
     if(oneRoundResult.includes("You Win")) {
         playerScore += 1;
+        paraPlayerScore.textContent = `${playerScore} Points`;
     } else if(oneRoundResult.includes("You Lose")) {
         computerScore += 1;
+        paraComputerScore.textContent = `${computerScore} Points`;
     } else if(oneRoundResult.includes("It's a tie")) {
         playerScore += 0;
         computerScore += 0;
