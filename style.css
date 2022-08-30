@@ -1,11 +1,7 @@
-body {
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 #game-wrapper {
@@ -28,7 +24,7 @@ body {
 
     text-align: center;
 
-    display: none;
+    visibility: hidden;
 }
 
 #result-annouce {
@@ -46,12 +42,37 @@ body {
 
 }
 
+#heading-result {
+    margin-bottom: 1.6rem;
+}
+
 .scores {
     display: flex;
     gap: 3rem;
-    text-align: center;
 }
 
 .scores p {
     font-weight: 600;
+    text-align: center;
 }
+
+.btn {
+    border: none;
+    padding: 0.6rem 1rem;
+    background-color: #000;
+    color: #fff;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
+#play-again-btn {
+    margin-top: 2rem;
+    width: 100%;
+}
+#play-again-btn:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+

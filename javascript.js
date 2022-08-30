@@ -68,6 +68,7 @@ const headingResult = document.getElementById("heading-result");
 const playerFinalScore = document.getElementById("final-player-score");
 const computerFinalScore = document.getElementById("final-computer-score");
 const gameWrapper = document.getElementById("game-wrapper");
+const playAgainBtn = document.getElementById("play-again-btn");
 
 
 let playerScore = 0;
@@ -97,11 +98,14 @@ function roundButton(choice) {
             headingResult.textContent = "Congratulations! You Win!";
             playerFinalScore.textContent = `Player Score: ${playerScore} Points`;
             computerFinalScore.textContent = `Player Score: ${computerScore} Points`;
-            gameWrapper.style.display = "none";
-            resultWrapper.style.display = "block";
+            gameWrapper.style.visibility = "hidden";
+            resultWrapper.style.visibility = "visible";
 
             playerScore = 0;
             computerScore = 0;
+
+            paraPlayerScore.textContent = `Player Score: ${playerScore} Points`;
+            paraComputerScore.textContent = `Computer Score: ${computerScore} Points`;
 
             return console.log("Congratulations! You Win!");
         } else if(computerScore == 5) {
@@ -109,11 +113,14 @@ function roundButton(choice) {
             headingResult.textContent = "Computer Won!";
             playerFinalScore.textContent = `Player Score: ${playerScore} Points`;
             computerFinalScore.textContent = `Player Score: ${computerScore} Points`;
-            gameWrapper.style.display = "none";
-            resultWrapper.style.display = "block";
+            gameWrapper.style.visibility = "hidden";
+            resultWrapper.style.visibility = "visible";
 
             playerScore = 0;
             computerScore = 0;
+
+            paraPlayerScore.textContent = `Player Score: ${playerScore} Points`;
+            paraComputerScore.textContent = `Computer Score: ${computerScore} Points`;
 
             return console.log("Computer Won!");
         } else return;
@@ -135,7 +142,12 @@ scissorsBtn.addEventListener("click", () => {
     roundButton("Scissors");
 });
 
-
+playAgainBtn.addEventListener("click", () => {
+    gameWrapper.style.visibility = "visible";
+    resultWrapper.style.visibility = "hidden";
+    playerScore = 0;
+    computerScore = 0;
+})
 
 
 
