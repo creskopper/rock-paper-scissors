@@ -145,6 +145,7 @@ scissorsBtn.addEventListener("click", () => {
 playAgainBtn.addEventListener("click", () => {
     gameWrapper.style.visibility = "visible";
     resultWrapper.style.visibility = "hidden";
+    paraResults.textContent = "Choose your weapon!"
     playerScore = 0;
     computerScore = 0;
 })
