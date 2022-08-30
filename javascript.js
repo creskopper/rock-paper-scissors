@@ -112,7 +112,7 @@ function roundButton(choice) {
 
             headingResult.textContent = "Computer Won!";
             playerFinalScore.textContent = `Player Score: ${playerScore} Points`;
-            computerFinalScore.textContent = `Player Score: ${computerScore} Points`;
+            computerFinalScore.textContent = `Computer Score: ${computerScore} Points`;
             gameWrapper.style.visibility = "hidden";
             resultWrapper.style.visibility = "visible";
 
