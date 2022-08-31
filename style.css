@@ -19,7 +19,6 @@
 }
 
 .game-card {
-    width: auto;
     flex-shrink: 0;
     padding: 4rem;
     display: flex;
@@ -28,22 +27,24 @@
 }
 
 .running-score {
+    width: 100%;
     font-size: 2rem;
     display: flex;
-    gap: 8rem;
+    justify-content: space-between;
     margin-bottom: 6rem;
 }
 
 .player-selection {
-    width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 3rem;
     margin-bottom: 1rem;
 }
 
 .player-selection img {
     width: 200px;
-    height: auto;
+    height: 200px;
     border: 2px solid #000;
 }
 .player-selection img:hover {

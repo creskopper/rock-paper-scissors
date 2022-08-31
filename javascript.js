@@ -80,6 +80,10 @@ function gameText() {
     paraPlayerScore.textContent = `Player Score: ${playerScore} Points`;
     paraComputerScore.textContent = `Computer Score: ${computerScore} Points`;
     paraResults.textContent = oneRoundResultText;
+
+    setTimeout(() => {
+        paraResults.textContent = "Choose your weapon!";
+    }, 1200);
 }
 
 function winnerAnnounce() {
